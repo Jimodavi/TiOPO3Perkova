@@ -19,9 +19,9 @@ namespace lr3_2.Tests
             int[,] expected =
             {
                 {1, Grid.mine_value, 1, 0, 0, 0, 0},
-                {0, 1, 0, 0, 0, 1, 0},
+                {1, 1, 1, 0, 1, 1, 1},
                 {0, 0, 0, 0, 1, Grid.mine_value, 1},
-                {0, 0, 0, 0, 0, 1, 0}
+                {0, 0, 0, 0, 1, 1, 1}
             };
             int rows = 4;
             int columns = 7;
