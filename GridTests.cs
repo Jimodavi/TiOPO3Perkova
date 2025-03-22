@@ -109,6 +109,26 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой увеличения значения ячейки сетки больше максимума. Ожидается " + expected + ". Фактически " + actual[cell_row, cell_column] + " .");
             }
         }
+        
+        [TestMethod()]
+        public void GridUpAdjacentIncTest()
+        {
+            int expected = 1;
+            int rows = 4;
+            int columns = 4;
+            Grid actual = new Grid(rows, columns);
+            int cell_row = 2;
+            int cell_column = 3;
 
+            try
+            {
+                actual.UpAdjacentInc(cell_row, cell_column);
+                Assert.AreEqual(expected, actual[cell_row - 1, cell_column]);
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException("Сбой увеличения значения соседней ячейки сверху. Ожидается " + expected + ". Фактически " + actual[cell_row - 1, cell_column] + " .");
+            }
+        }
     }
 }
