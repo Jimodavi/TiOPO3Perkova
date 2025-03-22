@@ -53,7 +53,7 @@
         }
         public void LeftAdjacentInc(int row, int column)
         {
-            IncCell(row, column - 1);
+            if (column > 0) IncCell(row, column - 1);
         }
     }
 }
