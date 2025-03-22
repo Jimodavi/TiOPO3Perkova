@@ -21,5 +21,10 @@
                     else return result;
             }
         }
+
+        public static char ToChar(int number)
+        {
+            return mine;
+        }
     }
 }
