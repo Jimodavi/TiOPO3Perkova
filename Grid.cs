@@ -5,6 +5,7 @@
         public readonly int rows;
         public readonly int columns;
         public readonly int[,] cells;
+        public const int mine_value = 9;
 
         public Grid(int rows, int columns)
         {
