@@ -12,8 +12,8 @@
         }
         public int this[int row, int column]
         {
-            get { return 9; }
-            set { }
+            get { return cells[row, column]; }
+            set { cells[row, column] = value; }
         }
         public void IncCell(int row, int column)
         {
