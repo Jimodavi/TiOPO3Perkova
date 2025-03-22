@@ -29,7 +29,7 @@
         }
         public void UpAdjacentInc(int row, int column)
         {
-            IncCell(row - 1, column);
+            if (row > 0) IncCell(row - 1, column);
         }
     }
 }
