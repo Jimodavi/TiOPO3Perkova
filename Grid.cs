@@ -10,5 +10,10 @@
             this.rows = rows;
             this.columns = columns;
         }
+        public int this[int row, int column]
+        {
+            get { return 9; }
+            set { }
+        }
     }
 }
