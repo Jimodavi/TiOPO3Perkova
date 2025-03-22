@@ -27,5 +27,9 @@
             if (current_value == mine_value) return;
             this[row, column] = current_value + 1;
         }
+        public void UpAdjacentInc(int row, int column)
+        {
+            IncCell(row - 1, column);
+        }
     }
 }
