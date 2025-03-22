@@ -14,5 +14,20 @@ namespace lr3_2.Tests
             Grid actual = new Grid(expected_rows, expected_columns);
             Assert.IsNotNull(actual, "Сбой создания сетки. Ожидается not null объект класса.");
         }
+
+        [TestMethod()]
+        public void GridGetRowsTest()
+        {
+            int expected_rows = 6;
+            Grid actual = new Grid(expected_rows, expected_rows);
+            try
+            {
+                Assert.AreEqual(expected_rows, actual.rows);
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException("Сбой получения строк сетки. Ожидается " + expected_rows + "строк. Фактически " + actual.rows + " строк.");
+            }
+        }
     }
 }
