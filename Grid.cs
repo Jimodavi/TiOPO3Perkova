@@ -55,5 +55,9 @@
         {
             if (column > 0) IncCell(row, column - 1);
         }
+        public void LeftUpAdjacentInc(int row, int column)
+        {
+            IncCell(row - 1, column - 1);
+        }
     }
 }
