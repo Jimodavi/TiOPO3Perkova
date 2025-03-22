@@ -24,8 +24,15 @@
 
         public static char ToChar(int number)
         {
-            if (number == Grid.mine_value) return mine;
-            else return dot;
+            switch (number)
+            {
+                case Grid.mine_value:
+                    return mine;
+                case 0:
+                    return dot;
+                default:
+                    return '2';
+            }
         }
     }
 }
