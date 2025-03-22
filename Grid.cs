@@ -4,6 +4,7 @@
     {
         public readonly int rows;
         public readonly int columns;
+        public readonly int[,] cells;
 
         public Grid(int rows, int columns)
         {
