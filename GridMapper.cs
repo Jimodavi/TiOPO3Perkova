@@ -24,7 +24,8 @@
 
         public static char ToChar(int number)
         {
-            return mine;
+            if (number == Grid.mine_value) return mine;
+            else return dot;
         }
     }
 }
