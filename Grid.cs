@@ -37,7 +37,7 @@
         }
         public void RightAdjacentInc(int row, int column)
         {
-            IncCell(row, column + 1);
+            if (column < columns - 1) IncCell(row, column + 1);
         }
     }
 }
