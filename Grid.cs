@@ -15,5 +15,12 @@
             get { return 9; }
             set { }
         }
+        public void IncCell(int row, int column)
+        {
+            // Метод увеличивающий значение клетки сетки на 1, если значение не максимальное
+            // row - строка сетки
+            // column - столбец сетки
+            this[row, column] = 3;
+        }
     }
 }
