@@ -47,5 +47,9 @@
         {
             if (row < rows - 1) IncCell(row + 1, column);
         }
+        public void LeftDownAdjacentInc(int row, int column)
+        {
+            IncCell(row + 1, column - 1);
+        }
     }
 }
