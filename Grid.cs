@@ -10,6 +10,7 @@
         {
             this.rows = rows;
             this.columns = columns;
+            cells = new int[rows, columns];
         }
         public int this[int row, int column]
         {
