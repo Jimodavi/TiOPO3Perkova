@@ -31,7 +31,7 @@
                 case 0:
                     return dot;
                 default:
-                    return '2';
+                    return System.Convert.ToChar(number + 48);
             }
         }
     }
