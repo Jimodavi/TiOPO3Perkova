@@ -28,5 +28,21 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой конверсии char в int. Ожидается " + expected + ". Фактически " + actual + " .");
             }
         }
+
+        [TestMethod()]
+        public void GridMapperDotToInt()
+        {
+            int expected = 0;
+            int actual = GridMapper.ToInt('.');
+
+            try
+            {
+                Assert.AreEqual(expected, actual);
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException("Сбой конверсии char в int. Ожидается " + expected + ". Фактически " + actual + " .");
+            }
+        }
     }
 }
