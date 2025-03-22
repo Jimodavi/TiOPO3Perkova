@@ -2,9 +2,12 @@
 {
     public class GridMapper
     {
+        public const char mine = '9';
+
         public static int ToInt(char symbol)
         {
-            return 9;
+            if (symbol == mine) return Grid.mine_value;
+            else return 0;
         }
     }
 }
