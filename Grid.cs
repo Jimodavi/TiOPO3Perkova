@@ -49,7 +49,7 @@
         }
         public void LeftDownAdjacentInc(int row, int column)
         {
-            IncCell(row + 1, column - 1);
+            if (row < rows - 1 && column > 0) IncCell(row + 1, column - 1);
         }
     }
 }
