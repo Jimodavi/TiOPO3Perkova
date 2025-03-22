@@ -8,10 +8,23 @@
 
         public void CalculateGrid(Grid grid)
         {
-            grid[0, 0] = 1; grid[0, 1] = Grid.mine_value; grid[0, 2] = 1;
-            grid[1, 1] = 1; grid[1, 5] = 1;
-            grid[2, 4] = 1; grid[2, 5] = Grid.mine_value; grid[2, 6] = 1;
-            grid[3, 5] = 1;
+            for (int i = 0; i < grid.rows; i++)
+            {
+                for (int j = 0; j < grid.columns; j++)
+                {
+                    if (grid[i,j] == Grid.mine_value)
+                    {
+                        grid.UpAdjacentInc(i, j);
+                        grid.RightUpAdjacentInc(i, j);
+                        grid.RightAdjacentInc(i, j);
+                        grid.RightDownAdjacentInc(i, j);
+                        grid.DownAdjacentInc(i, j);
+                        grid.LeftDownAdjacentInc(i, j);
+                        grid.LeftAdjacentInc(i, j);
+                        grid.LeftUpAdjacentInc(i, j);
+                    }
+                }
+            }
         }
     }
 }
