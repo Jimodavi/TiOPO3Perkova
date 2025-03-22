@@ -38,5 +38,24 @@ namespace lr3_2.Tests
             }
 
         }
+
+        public bool arrayEquals(int[,] expected, int[,] actual, out string message)
+        {
+            message = "";
+            if (expected.GetLength(0) != actual.GetLength(0)) return false;
+            if (expected.GetLength(1) != actual.GetLength(1)) return false;
+            for (int i = 0; i < expected.GetLength(0); i++)
+            {
+                for (int j = 0; j < expected.GetLength(1); j++)
+                {
+                    if (expected[i, j] != actual[i, j])
+                    {
+                        message = "Ожидается [" + i + ", " + j + "] = " + expected[i, j] + ". Фактически [" + i + ", " + j + "] = " + actual[i, j] + ".";
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }
