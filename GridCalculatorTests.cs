@@ -39,6 +39,31 @@ namespace lr3_2.Tests
 
         }
 
+        [TestMethod()]
+        public void GridCalculator3MinesTest()
+        {
+            int[,] expected =
+            {
+                {Grid.mine_value, Grid.mine_value},
+                {Grid.mine_value, 3}
+            };
+            int rows = 2;
+            int columns = 2;
+            Grid actual = new Grid(rows, columns);
+            actual[0, 0] = Grid.mine_value;
+            actual[0, 1] = Grid.mine_value;
+            actual[1, 0] = Grid.mine_value;
+            GridCalculator calc = new GridCalculator();
+            calc.CalculateGrid(actual);
+
+            string message;
+            if (!arrayEquals(expected, actual.cells, out message))
+            {
+                throw new AssertFailedException("Сбой вычисления значений сетки. " + message);
+            }
+
+        }
+
         public bool arrayEquals(int[,] expected, int[,] actual, out string message)
         {
             message = "";
