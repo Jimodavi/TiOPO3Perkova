@@ -124,5 +124,21 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой конверсии int в char. Ожидается " + expected + ". Фактически " + actual + " .");
             }
         }
+
+        [TestMethod()]
+        public void GridMapper4ToChar()
+        {
+            char expected = '4';
+            char actual = GridMapper.ToChar(4);
+
+            try
+            {
+                Assert.AreEqual(expected, actual);
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException("Сбой конверсии int в char. Ожидается " + expected + ". Фактически " + actual + " .");
+            }
+        }
     }
 }
