@@ -44,5 +44,26 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой получения столбцов сетки. Ожидается " + expected_columns + "столбцов. Фактически " + actual.columns + " столбцов.");
             }
         }
+
+        [TestMethod()]
+        public void GridGetCellTest()
+        {
+            int expected = 9;
+            int rows = 2;
+            int columns = 3;
+            Grid actual = new Grid(rows, columns);
+            int cell_row = 0;
+            int cell_column = 1;
+            actual[cell_row, cell_column] = expected;
+
+            try
+            {
+                Assert.AreEqual(expected, actual[cell_row, cell_column]);
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException("Сбой получения значения ячейки сетки. Ожидается " + expected + ". Фактически " + actual[cell_row, cell_column] + " .");
+            }
+        }
     }
 }
