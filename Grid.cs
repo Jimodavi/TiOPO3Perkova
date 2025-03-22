@@ -23,7 +23,9 @@
             // Метод увеличивающий значение клетки сетки на 1, если значение не максимальное
             // row - строка сетки
             // column - столбец сетки
-            this[row, column] = 3;
+            var current_value = this[row, column];
+            if (current_value == mine_value) return;
+            this[row, column] = current_value + 1;
         }
     }
 }
