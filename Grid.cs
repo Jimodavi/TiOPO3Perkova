@@ -39,5 +39,9 @@
         {
             if (column < columns - 1) IncCell(row, column + 1);
         }
+        public void RightDownAdjacentInc(int row, int column)
+        {
+            IncCell(row + 1, column + 1);
+        }
     }
 }
