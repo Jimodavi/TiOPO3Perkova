@@ -37,11 +37,18 @@
 
         public static Grid StringArrayToGrid(string[] file)
         {
-            Grid grid = new Grid(4, 3);
-            grid[0, 0] = 3; grid[0, 1] = 0; grid[0, 2] = 0;
-            grid[1, 0] = 0; grid[1, 1] = 0; grid[1, 2] = 0;
-            grid[2, 0] = 0; grid[2, 1] = 9; grid[2, 2] = 0;
-            grid[3, 0] = 5; grid[3, 1] = 3; grid[3, 2] = 8;
+            Grid grid = new Grid(file.GetLength(0), file[0].Length);
+            int row = 0;
+            foreach (var line in file)
+            {
+                int column = 0;
+                foreach (var symbol in line)
+                {
+                    grid[row, column] = ToInt(symbol);
+                    column = column + 1;
+                }
+                row = row + 1;
+            }
             return grid;
         }
     }
