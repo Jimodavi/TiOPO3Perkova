@@ -182,7 +182,7 @@ namespace lr3_2.Tests
         [TestMethod()]
         public void GridToStringArray1by4()
         {
-            string[] expected = { "2", "1", "4", "-" };
+            string[] expected = { "214." };
             int rows = 1;
             int columns = 4;
             Grid grid = new Grid(rows, columns);
