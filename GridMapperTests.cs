@@ -140,5 +140,25 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой конверсии int в char. Ожидается " + expected + ". Фактически " + actual + " .");
             }
         }
+
+        [TestMethod()]
+        public void StringArrayToGrid4by3()
+        {
+            int rows = 4;
+            int columns = 3;
+            Grid expected = new Grid(rows, columns);
+            expected[0, 0] = 3; expected[0, 1] = 0; expected[0, 2] = 0;
+            expected[1, 0] = 0; expected[1, 1] = 0; expected[1, 2] = 0;
+            expected[2, 0] = 0; expected[2, 1] = 9; expected[2, 2] = 0;
+            expected[3, 0] = 5; expected[3, 1] = 3; expected[3, 2] = 8;
+            string[] array = { "3..", ".0.", ".9.", "538" };
+            Grid actual = GridMapper.StringArrayToGrid(array);
+
+            string message;
+            if (!GridCalculatorTests.arrayEquals(expected.cells, actual.cells, out message))
+            {
+                throw new AssertFailedException("Сбой конверсии массива string в Grid. " + message);
+            }
+        }
     }
 }
