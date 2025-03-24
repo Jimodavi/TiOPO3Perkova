@@ -178,5 +178,23 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой конверсии массива string в Grid. " + message);
             }
         }
+        
+        [TestMethod()]
+        public void GridToStringArray1by4()
+        {
+            string[] expected = { "2", "1", "4", "-" };
+            int rows = 1;
+            int columns = 4;
+            Grid grid = new Grid(rows, columns);
+            grid[0, 0] = 2; grid[0, 1] = 1; grid[0, 2] = 4; grid[0, 3] = 0;
+            string[] array = { "2", "1", "4", "-" };
+            string[] actual = GridMapper.GridToStringArray(grid);
+
+            string message;
+            if (!arrayEquals(expected,actual,out message))
+            {
+                throw new AssertFailedException("Сбой конверсии Grid в массив string. " + message);
+            }
+        }
     }
 }
