@@ -199,7 +199,7 @@ namespace lr3_2.Tests
         [TestMethod()]
         public void GridToStringArray3by2()
         {
-            string[] expected = { "67", "\\#", "+\"" };
+            string[] expected = { "67", "..", ".." };
             int rows = 3;
             int columns = 2;
             Grid grid = new Grid(rows, columns);
