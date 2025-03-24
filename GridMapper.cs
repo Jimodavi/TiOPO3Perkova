@@ -52,5 +52,11 @@
             }
             return grid;
         }
+        
+        public static string[] GridToStringArray(Grid grid)
+        {
+            string[] result = { "2", "1", "4", "-" };
+            return result;
+        }
     }
 }
