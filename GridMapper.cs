@@ -37,6 +37,7 @@
 
         public static Grid StringArrayToGrid(string[] file)
         {
+            // todo реализовать обработку IndexOutOfRangeException
             Grid grid = new Grid(file.GetLength(0), file[0].Length);
             int row = 0;
             foreach (var line in file)
