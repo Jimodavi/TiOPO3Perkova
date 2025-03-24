@@ -64,7 +64,7 @@ namespace lr3_2.Tests
 
         }
 
-        public bool arrayEquals(int[,] expected, int[,] actual, out string message)
+        public static bool arrayEquals(int[,] expected, int[,] actual, out string message)
         {
             message = "";
             if (expected.GetLength(0) != actual.GetLength(0)) return false;
