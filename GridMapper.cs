@@ -55,7 +55,15 @@
         
         public static string[] GridToStringArray(Grid grid)
         {
-            string[] result = { "2", "1", "4", "-" };
+            string[] result = new string[grid.rows];
+            for (int i = 0; i<grid.rows;i++)
+            {
+                for (int j =0; j<grid.columns; j++)
+                {
+                    char symbol = ToChar(grid[i, j]);
+                    result[i] += symbol;
+                }
+            }
             return result;
         }
     }
