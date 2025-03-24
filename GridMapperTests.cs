@@ -196,5 +196,24 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой конверсии Grid в массив string. " + message);
             }
         }
+
+        public static bool arrayEquals(string[] expected, string[] actual, out string message)
+        {
+            message = "";
+            if (expected.GetLength(0) != actual.GetLength(0))
+            {
+                message = "Ожидается " + expected.GetLength(0) + " элементов. Фактически " + actual.GetLength(0) + " элментов.";
+                return false;
+            }
+            for (int i = 0; i < expected.GetLength(0); i++)
+            {
+                if (String.Compare(actual[i], expected[i]) != 0)
+                {
+                    message = "Ожидается [" + i + "] = " + expected[i] + ". Фактически [" + i + "] = " + actual[i] + ".";
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
