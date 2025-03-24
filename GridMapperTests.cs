@@ -197,6 +197,25 @@ namespace lr3_2.Tests
             }
         }
 
+        [TestMethod()]
+        public void GridToStringArray3by2()
+        {
+            string[] expected = { "67", "\\#", "+\"" };
+            int rows = 3;
+            int columns = 2;
+            Grid grid = new Grid(rows, columns);
+            grid[0, 0] = 6; grid[0, 1] = 7;
+            grid[1, 0] = 0; grid[1, 1] = 0;
+            grid[2, 0] = 0; grid[2, 1] = 0;
+            string[] actual = GridMapper.GridToStringArray(grid);
+
+            string message;
+            if (!arrayEquals(expected, actual, out message))
+            {
+                throw new AssertFailedException("Сбой конверсии Grid в массив string. " + message);
+            }
+        }
+
         public static bool arrayEquals(string[] expected, string[] actual, out string message)
         {
             message = "";
