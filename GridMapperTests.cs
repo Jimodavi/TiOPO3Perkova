@@ -221,7 +221,7 @@ namespace lr3_2.Tests
             message = "";
             if (expected.GetLength(0) != actual.GetLength(0))
             {
-                message = "Ожидается " + expected.GetLength(0) + " элементов. Фактически " + actual.GetLength(0) + " элментов.";
+                message = "Ожидается " + expected.GetLength(0) + " элементов. Фактически " + actual.GetLength(0) + " элементов.";
                 return false;
             }
             for (int i = 0; i < expected.GetLength(0); i++)
