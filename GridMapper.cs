@@ -17,7 +17,7 @@
 
                 default:
                     int result = symbol - '0';
-                    if (result > 9) return 0;
+                    if (result > 9 || 0 > result) return 0;
                     else return result;
             }
         }
