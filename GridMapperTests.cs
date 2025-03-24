@@ -187,7 +187,6 @@ namespace lr3_2.Tests
             int columns = 4;
             Grid grid = new Grid(rows, columns);
             grid[0, 0] = 2; grid[0, 1] = 1; grid[0, 2] = 4; grid[0, 3] = 0;
-            string[] array = { "2", "1", "4", "-" };
             string[] actual = GridMapper.GridToStringArray(grid);
 
             string message;
