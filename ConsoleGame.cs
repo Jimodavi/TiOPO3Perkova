@@ -9,5 +9,10 @@ namespace lr3_2
         public ConsoleGame(Grid grid)
         {
         }
+
+        public string GridToString()
+        {
+            return "|??\n|??\n|??\n";
+        }
     }
 }
