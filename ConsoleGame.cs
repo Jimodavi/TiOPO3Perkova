@@ -7,10 +7,12 @@ namespace lr3_2
     public class ConsoleGame
     {
         public readonly Grid grid;
+        public readonly bool[,] show;
 
         public ConsoleGame(Grid grid)
         {
             this.grid = grid;
+            show = new bool[grid.rows, grid.columns];
         }
 
         public string GridToString()
