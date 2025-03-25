@@ -8,11 +8,13 @@ namespace lr3_2
     {
         public readonly Grid grid;
         public readonly bool[,] show;
+        public int counter;
 
         public ConsoleGame(Grid grid)
         {
             this.grid = grid;
             show = new bool[grid.rows, grid.columns];
+            counter = grid.rows * grid.columns;
         }
 
         public string GridToString()
