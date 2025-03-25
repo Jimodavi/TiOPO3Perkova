@@ -104,5 +104,40 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой метода ConsoleGame.Play. Ожидается вывод: " + expected + "Фактически вывод: " + actual);
             }
         }
+
+        [TestMethod(), Timeout(2000)]
+        public void ConsoleGamePlay12MovesTest()
+        {
+            int rows = 4;
+            int columns = 3;
+            Grid grid = new Grid(rows, columns);
+            grid[0, 0] = 0; grid[0, 1] = 1; grid[0, 2] = 0;
+            grid[1, 0] = 7; grid[1, 1] = 1; grid[1, 2] = 1;
+            grid[2, 0] = 6; grid[2, 1] = 0; grid[2, 2] = 0;
+            grid[3, 0] = 5; grid[3, 1] = 1; grid[3, 2] = 3;
+            ConsoleGame game = new ConsoleGame(grid);
+            string input = "";
+            for (int i = 0; i < grid.rows; i++)
+                for (int j = 0; j < grid.columns; j++)
+                    input += i.ToString() + " " + j.ToString() + "\n";
+            StringReader stringReader = new StringReader(input);
+            Console.SetIn(stringReader);
+            StringWriter stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
+            game.Play();
+            string actual = stringWriter.ToString();
+            int substring_length = 13 + rows * columns + rows * 2;
+            actual = actual.Substring(actual.Length - substring_length, substring_length);
+            string expected = "|Конец игры\r\n|.1.\n|711\n|6..\n|513\n";
+
+            try
+            {
+                Assert.AreEqual(expected, actual);
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException("Сбой метода ConsoleGame.Play. Ожидается вывод: " + expected + "Фактически вывод: " + actual);
+            }
+        }
     }
 }
