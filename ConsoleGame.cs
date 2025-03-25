@@ -6,8 +6,11 @@ namespace lr3_2
 {
     public class ConsoleGame
     {
+        public readonly Grid grid;
+
         public ConsoleGame(Grid grid)
         {
+            this.grid = grid;
         }
 
         public string GridToString()
