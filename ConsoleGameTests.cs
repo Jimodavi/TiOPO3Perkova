@@ -139,5 +139,32 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой метода ConsoleGame.Play. Ожидается вывод: " + expected + "Фактически вывод: " + actual);
             }
         }
+
+        [TestMethod(), Timeout(2000)]
+        public void ConsoleGamePlayLooseTest()
+        {
+            int rows = 5;
+            int columns = 4;
+            Grid grid = new Grid(rows, columns);
+            grid[3, 3] = Grid.mine_value;
+            ConsoleGame game = new ConsoleGame(grid);
+            string input = "3 3\n";
+            StringReader stringReader = new StringReader(input);
+            Console.SetIn(stringReader);
+            StringWriter stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
+            game.Play();
+            string actual = stringWriter.ToString();
+            string expected = "|????\n|????\n|????\n|????\n|????\n|Введите ход: <строка> <столбец>; пустая строка – выход.\r\n|Конец игры\r\n|????\n|????\n|????\n|???9\n|????\n";
+
+            try
+            {
+                Assert.AreEqual(expected, actual);
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException("Сбой метода ConsoleGame.Play. Ожидается вывод \"" + expected + "\".\nФактически вывод \"" + actual + "\".");
+            }
+        }
     }
 }
