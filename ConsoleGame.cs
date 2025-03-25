@@ -47,7 +47,8 @@ namespace lr3_2
                 string[] input_split = input.Split(',', ' ');
                 int[] numbers = input_split.Select(element => Int32.Parse(element)).ToArray();
                 show[numbers[0], numbers[1]] = true;
-                counter -= 1;
+                if (grid[numbers[0], numbers[1]] == Grid.mine_value) counter = 0;
+                else counter -= 1;
             }
             WriteLine("|Конец игры");
             Write(GridToString());
