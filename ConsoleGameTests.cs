@@ -36,5 +36,27 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой конверсии Grid в string. Ожидается: " + expected + "Фактически: " + actual);
             }
         }
+        
+        [TestMethod()]
+        public void ConsoleGameGridToString2by1Test()
+        {
+            string expected = "|?\n|?\n";
+            int rows = 2;
+            int columns = 1;
+            Grid grid = new Grid(rows, columns);
+            grid[0, 0] = 2;
+            grid[1, 0] = 6;
+            ConsoleGame game = new ConsoleGame(grid);
+            string actual = game.GridToString();
+
+            try
+            {
+                Assert.AreEqual(expected, actual);
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException("Сбой конверсии Grid в string. Ожидается: " + expected + "Фактически: " + actual);
+            }
+        }
     }
 }
