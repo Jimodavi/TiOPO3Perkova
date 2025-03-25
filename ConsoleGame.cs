@@ -23,7 +23,7 @@ namespace lr3_2
                 result += "|";
                 for (int j = 0; j < grid.columns; j++)
                 {
-                    result += '?';
+                    result += show[i, j] ? GridMapper.ToChar(grid[i, j]) : '?';
                 }
                 result += "\n";
             }
