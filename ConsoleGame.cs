@@ -12,7 +12,17 @@ namespace lr3_2
 
         public string GridToString()
         {
-            return "|??\n|??\n|??\n";
+            string result = "";
+            for (int i = 0; i < grid.rows; i++)
+            {
+                result += "|";
+                for (int j = 0; j < grid.columns; j++)
+                {
+                    result += '?';
+                }
+                result += "\n";
+            }
+            return result;
         }
     }
 }
