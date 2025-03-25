@@ -81,5 +81,28 @@ namespace lr3_2.Tests
                 throw new AssertFailedException("Сбой конверсии Grid в string. Ожидается: " + expected + "Фактически: " + actual);
             }
         }
+
+        [TestMethod(), Timeout(2000)]
+        public void ConsoleGamePlayExitTest()
+        {
+            ConsoleGame game = new ConsoleGame(new Grid(1, 1));
+            string input = "\n";
+            StringReader stringReader = new StringReader(input);
+            Console.SetIn(stringReader);
+            StringWriter stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
+            game.Play();
+            string actual = stringWriter.ToString();
+            string expected = "|?\n|Введите ход: <строка> <столбец>; пустая строка – выход.\r\n|Конец игры\r\n|?\n";
+
+            try
+            {
+                Assert.AreEqual(expected, actual);
+            }
+            catch (Exception)
+            {
+                throw new AssertFailedException("Сбой метода ConsoleGame.Play. Ожидается вывод: " + expected + "Фактически вывод: " + actual);
+            }
+        }
     }
 }
