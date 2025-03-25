@@ -29,14 +29,24 @@ namespace lr3_2
             }
             return result;
         }
-        
+
         public void Play()
         {
             // todo реализовать обработку неправильного ввода
-            Write(GridToString());
-            WriteLine("|Введите ход: " +
-                "<строка> <столбец>; " +
-                "пустая строка – выход.");
+            while (counter>0)
+            {
+                Write(GridToString());
+                WriteLine("|Введите ход: " +
+                    "<строка> <столбец>; " +
+                    "пустая строка – выход.");
+                string input = ReadLine();
+                if (input == "") break;
+
+                string[] input_split = input.Split(',', ' ');
+                int[] numbers = input_split.Select(element => Int32.Parse(element)).ToArray();
+                show[numbers[0], numbers[1]] = true;
+                counter -= 1;
+            }
             WriteLine("|Конец игры");
             Write(GridToString());
         }
