@@ -29,5 +29,16 @@ namespace lr3_2
             }
             return result;
         }
+        
+        public void Play()
+        {
+            // todo реализовать обработку неправильного ввода
+            Write(GridToString());
+            WriteLine("|Введите ход: " +
+                "<строка> <столбец>; " +
+                "пустая строка – выход.");
+            WriteLine("|Конец игры");
+            Write(GridToString());
+        }
     }
 }
