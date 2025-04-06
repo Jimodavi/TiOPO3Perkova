@@ -1,0 +1,6 @@
+projectKey=lr3_metr_1
+serverUrl=http://localhost:9000
+serverVersion=25.3.0.104237
+dashboardUrl=http://localhost:9000/dashboard?id=lr3_metr_1
+ceTaskId=798b4ef4-e56e-40e1-b833-38d2bdcaaa8d
+ceTaskUrl=http://localhost:9000/api/ce/task?id=798b4ef4-e56e-40e1-b833-38d2bdcaaa8d
